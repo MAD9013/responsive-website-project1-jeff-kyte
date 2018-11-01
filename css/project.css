@@ -43,7 +43,7 @@ header{
     padding:1rem 2rem;
     color: hsl(0, 0%, 0%);
     height: 125px;
-    background: hsl(0, 0%, 100%) url("../img/header/header_1000px.jpg") repeat-x;
+    background: hsl(0, 0%, 100%) url("../img/header/header_1000px.jpg") repeat-x top right;
 }
 header > h1{
     
@@ -58,14 +58,12 @@ header > h1, header > h2 {
 /*************************************************
             NAVMENU
 *************************************************/
-nav{
+nav.mainnav{
     padding:1rem 2rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: flex-start;
     background-color: hsl(0, 0%, 80%);
-    line-height: 2rem;
 }
 nav > a,
 nav > a:visited,
@@ -92,8 +90,8 @@ main{
     grid-row-gap: 0;
 }
 
-section{
-    margin: 1em 0em 1.5em 0em;
+main section{
+    margin: 1rem 0rem 1.5rem 0rem;
 }
 section p{
     
@@ -101,15 +99,12 @@ section p{
 section p img{
     float: left;
     width: 150px;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 main section h1, main section h2 {
     color: hsl(211, 60%, 55%);
     margin: 0.5rem 0;
-}
-main section h1 {
-    font-size: 2em;
 }
 
 /*************************************************
@@ -117,39 +112,67 @@ main section h1 {
 *************************************************/
 footer{
     padding:1rem 2rem;
+    display: flex;
+    flex-flow: column-reverse wrap;
+    background-color: hsl(0, 0%, 80%);
+    border-top: 10px solid hsl(211, 60%, 55%);
 }
-.foot nav{
-    
+nav.subnav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    background-color: hsl(0, 0%, 80%);
 }
 .foot section{
-    
+    flex-grow: 1;
 }
 .foot dl{
     
 }
 .foot dt{
-    
+    font-size: 1.5rem;
+    color: hsl(211, 60%, 55%);
 }
 .foot dd{
     
 }
 .foot dd a,
 .foot dd a:visited{
-    
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
 }
 .foot dd a:active,
 .foot dd a:focus,
 .foot dd a:hover{
-    
+    color: hsl(211, 60%, 55%);
+}
+.form-box {
+    padding: 0.3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.foot section .form-box:first-of-type {
+    flex-direction: row;
+}
+.form-box input,
+.form-box select,
+.form-box textarea,
+.form-box button {
+    flex-basis: 100%;
+}
+.form-box textarea {
+    height: 70px;
+}
+.form-box button {
+    max-width: 110px;
+    padding: 0.2rem;
 }
 /*************************************************
             MEDIA QUERIES for layout
 *************************************************/
 @media (max-width: 599px){
-    nav {
-        flex-direction: column;
-    }
-
+    /* Mobile first */
 }
 @media (min-width: 600px) and (max-width:999px){
     main {
@@ -158,10 +181,16 @@ footer{
     main section:first-of-type {
         grid-column: 1 / span 2;
     }
+    main section h1 {
+        font-size: 2rem;
+    }
 }
 @media (min-width: 1000px){
     main {
         grid-template-columns: repeat(3, 1fr);
+    }
+    footer {
+        flex-direction: row;
     }
 }
 
@@ -169,20 +198,16 @@ footer{
             MEDIA QUERIES for content
 *************************************************/
 @media (max-width: 599px){
-    nav {
+    nav.mainnav {
+        flex-direction: column;
         font-size: 1.3rem;
+        line-height: 2rem;
     }
     nav > a,
     nav > a:visited,
     nav > a:link{
-        display: block;
         width: 100%;
         border-bottom: 1px solid hsl(0, 0%, 60%);
-    }
-    nav > a:active,
-    nav > a:focus,
-    nav > a:hover{
-        border-color: hsl(211, 60%, 55%);
     }
 }
 @media (min-width: 600px) and (max-width:999px){
@@ -194,6 +219,8 @@ footer{
         width: 200px;
     }
 }
-@media (min-width: 1000px){
-    
+@media (min-width: 1600px){
+        html {
+        font-size: 18px;
+    }
 }
