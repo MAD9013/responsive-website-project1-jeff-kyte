@@ -55,9 +55,10 @@ header > h1, header > h2 {
 nav.mainnav{
     padding:1rem 2rem;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     background-color: hsl(0, 0%, 80%);
+    font-size: 1.2rem;
 }
 nav > a,
 nav > a:visited,
@@ -120,6 +121,7 @@ nav.subnav{
 }
 .foot section{
     flex-grow: 1;
+    margin-bottom: 1rem;
 }
 .foot dl{
     
@@ -180,6 +182,9 @@ nav.subnav{
     }
 }
 @media (min-width: 1000px){
+    nav.mainnav {
+        flex-direction: row;
+    }
     main {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -193,9 +198,8 @@ nav.subnav{
 *************************************************/
 @media (max-width: 599px){
     nav.mainnav {
-        flex-direction: column;
-        font-size: 1.3rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
     }
     nav > a,
     nav > a:visited,
@@ -205,6 +209,9 @@ nav.subnav{
     }
 }
 @media (min-width: 600px) and (max-width:999px){
+    nav.mainnav {
+        flex-direction: row;
+    }
     section p img {
         width: 100%;
         max-width: 400px;
@@ -214,7 +221,7 @@ nav.subnav{
     }
 }
 @media (min-width: 1600px){
-        html {
+    html {
         font-size: 18px;
     }
 }
