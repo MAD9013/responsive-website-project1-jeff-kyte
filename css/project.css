@@ -18,7 +18,7 @@ html{
     line-height: 1.5;
 }
 p{
-    
+    margin: 1rem 0;
 }
 a{
     
@@ -44,12 +44,6 @@ header{
     color: hsl(0, 0%, 0%);
     height: 125px;
     background: hsl(0, 0%, 100%) url("../img/header/header_1000px.jpg") repeat-x top right;
-}
-header > h1{
-    
-}
-header > h2{
-    
 }
 header > h1, header > h2 {
     color: hsl(0, 0%, 100%);
